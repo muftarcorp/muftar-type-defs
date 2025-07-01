@@ -1,6 +1,7 @@
 import { Userdata } from "./types/user";
 import { UserVerificationRequest } from "./types/user_verification_requests";
 import { Load } from "./types/load";
+import { LoadOrganization } from "./types/load_organization";
 import { UserFcmToken } from "./types/user_fcm_token";
 import { UserSignature } from "./types/user_signature";
 import { Organization } from "./types/organization";
@@ -23,4 +24,4 @@ import { OrganizationInvite } from "./types/organization_invite";
 import { OrganizationInviteLink } from "./types/organization_invite_link";
 import { OrganizationUser } from "./types/organization_user";
 
-export { Userdata, UserVerificationRequest, Load, UserSignature, Organization, JobApplication, Equipment, Notification, Media, Driver, DriverReport, CreditWallet, CreditTransaction, Chat, ChatUser, ChatMessage, BillingProfile, BillingInvoice, BillingLineItem, Location, OrganizationInvite, OrganizationInviteLink, OrganizationUser };
+export { Userdata, UserVerificationRequest, Load, LoadOrganization, UserSignature, Organization, JobApplication, Equipment, Notification, Media, Driver, DriverReport, CreditWallet, CreditTransaction, Chat, ChatUser, ChatMessage, BillingProfile, BillingInvoice, BillingLineItem, Location, OrganizationInvite, OrganizationInviteLink, OrganizationUser };

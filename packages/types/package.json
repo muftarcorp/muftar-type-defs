@@ -1,6 +1,6 @@
 {
   "name": "@muftar/types",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "TypeScript type definitions for Muftar platform",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -9,7 +9,7 @@
   "author": "Muftar Team",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-org/muftar-type-defs.git"
+    "url": "https://github.com/muftarcorp/muftar-type-defs.git"
   },
   "keywords": [
     "typescript",

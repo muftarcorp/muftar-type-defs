@@ -27,4 +27,4 @@ import { OrganizationInvite } from "./types/organization_invite";
 import { OrganizationInviteLink } from "./types/organization_invite_link";
 import { OrganizationUser } from "./types/organization_user";
 
-export { Userdata, UserVerificationRequest, Load, LoadOrganization, UserSignature, Organization, JobApplication, Equipment, Notification, Media, Driver, DriverReport, CreditWallet, CreditTransaction, Chat, ChatUser, ChatMessage, BillingProfile, BillingInvoice, BillingLineItem, Location, OrganizationInvite, OrganizationInviteLink, OrganizationUser, Job, LoadLog };
+export { Userdata, UserVerificationRequest, UserFcmToken, Load, LoadOrganization, UserSignature, Organization, JobApplication, Equipment, Notification, Media, Driver, DriverReport, CreditWallet, CreditTransaction, Chat, ChatUser, ChatMessage, BillingProfile, BillingInvoice, BillingLineItem, Location, OrganizationInvite, OrganizationInviteLink, OrganizationUser, Job, LoadLog };

@@ -1,3 +1,4 @@
+import { BillingProfile } from "./billing/profile";
 export interface Organization {
     id: string;
     created_at: number;

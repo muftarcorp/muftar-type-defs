@@ -1,0 +1,16 @@
+{
+  "name": "muftar-type-defs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "build": "yarn workspace @muftar/types build",
+    "clean": "yarn workspace @muftar/types clean",
+    "publish:types": "yarn workspace @muftar/types publish"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

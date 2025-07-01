@@ -1,0 +1,36 @@
+{
+  "name": "@muftar/types",
+  "version": "1.0.0",
+  "description": "TypeScript type definitions for Muftar platform",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "author": "Muftar Team",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/muftar-type-defs.git"
+  },
+  "keywords": [
+    "typescript",
+    "types",
+    "muftar",
+    "logistics",
+    "transportation"
+  ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "yarn build",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

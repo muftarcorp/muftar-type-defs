@@ -23,10 +23,11 @@ import { BillingInvoice } from "./types/billing/invoices";
 import { BillingLineItem } from "./types/billing/invoice_line_item";
 import { Location } from "./types/location";
 import { Statement, StatementLoad, StatementFuel, StatementReimbursement, StatementDeduction } from "./types/statement/statement";
+import { OrganizationStatementProfile } from "./types/organization_statement_profile";
 import { StatementBlock } from "./types/statement/statement_block"; 
 
 import { OrganizationInvite } from "./types/organization_invite";
 import { OrganizationInviteLink } from "./types/organization_invite_link";
 import { OrganizationUser } from "./types/organization_user";
 
-export { Userdata, UserVerificationRequest, UserFcmToken, Load, LoadOrganization, UserSignature, Organization, JobApplication, Equipment, Notification, Media, Driver, DriverReport, CreditWallet, CreditTransaction, Chat, ChatUser, ChatMessage, BillingProfile, BillingInvoice, BillingLineItem, Location, OrganizationInvite, OrganizationInviteLink, OrganizationUser, Job, LoadLog, Statement, StatementLoad, StatementFuel, StatementReimbursement, StatementDeduction, StatementBlock };
+export { Userdata, UserVerificationRequest, UserFcmToken, Load, LoadOrganization, UserSignature, Organization, JobApplication, Equipment, Notification, Media, Driver, DriverReport, CreditWallet, CreditTransaction, Chat, ChatUser, ChatMessage, BillingProfile, BillingInvoice, BillingLineItem, Location, OrganizationInvite, OrganizationInviteLink, OrganizationUser, Job, LoadLog, Statement, StatementLoad, StatementFuel, StatementReimbursement, StatementDeduction, StatementBlock, OrganizationStatementProfile };

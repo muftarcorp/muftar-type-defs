@@ -1,4 +1,6 @@
 import { BillingProfile } from "./billing/profile";
+import { OrganizationStatementProfile } from "./organization_statement_profile";
+
 export interface Organization {
     id: string;
     created_at: number;
@@ -24,4 +26,5 @@ export interface Organization {
     location_id?: string;
     billing_profile_id?: string | null;
     billing_profile?: BillingProfile;
+    organization_statement_profile?: OrganizationStatementProfile;
 }

@@ -1,41 +1,42 @@
-export interface StatementLoad {
+// Base interface for common statement fields
+export interface BaseStatementItem {
     id: string;
     date: number;
-    broker: string;
-    load_number: string;
-    description: string;
-    gross: number;
-    commission: number;
-    net: number;
-}
-
-export interface StatementFuel {
-    id: string;
-    date: number;
-    station: string;
-    location: string;
-    amount: number;
-    net_balance: number;
-}
-
-export interface StatementReimbursement {
-    id: string;
-    date: number;
-    type: string;
     description: string;
     amount: number;
-    net_balance: number;
-}
-
-export interface StatementDeduction {
-    id: string;
-    category: string;
-    description: string;
-    charge: number;
     ytd: number;
     net_balance: number;
 }
 
+// Specific statement types extending the base
+export interface StatementLoad extends BaseStatementItem {
+    type: 'load';
+    broker: string;
+    load_number: string;
+    gross: number;
+    commission: number;
+}
+
+export interface StatementFuel extends BaseStatementItem {
+    type: 'fuel';
+    station: string;
+    location: string;
+}
+
+export interface StatementReimbursement extends BaseStatementItem {
+    type: 'reimbursement';
+    category: string;
+}
+
+export interface StatementDeduction extends BaseStatementItem {
+    type: 'deduction';
+    category: string;
+}
+
+// Union type for all statement items with type discrimination
+export type StatementItem = StatementLoad | StatementFuel | StatementReimbursement | StatementDeduction;
+
+// Main statement interface with all original fields
 export interface Statement {
     id: string;
     created_at: number;
@@ -67,3 +68,9 @@ export interface Statement {
     metadata?: any;
     statement_block_id?: string;
 }
+
+// Helper type guards for type safety
+export const isStatementLoad = (item: StatementItem): item is StatementLoad => item.type === 'load';
+export const isStatementFuel = (item: StatementItem): item is StatementFuel => item.type === 'fuel';
+export const isStatementReimbursement = (item: StatementItem): item is StatementReimbursement => item.type === 'reimbursement';
+export const isStatementDeduction = (item: StatementItem): item is StatementDeduction => item.type === 'deduction';

@@ -21,6 +21,11 @@ export interface StatementFuel extends BaseStatementItem {
     type: 'fuel';
     station: string;
     location: string;
+    discount: number;
+    // distance: number;
+    // gallons: number;
+    // price: number;
+    // total: number;
 }
 
 export interface StatementReimbursement extends BaseStatementItem {

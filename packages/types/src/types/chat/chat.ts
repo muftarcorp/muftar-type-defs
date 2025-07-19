@@ -1,5 +1,5 @@
 
-export type ChatCategory = 'direct' | 'group';
+export type ChatCategory = 'direct' | 'group' | 'support';
 export type ChatStatus = 'active' | 'archived' | 'deleted';
 
 export interface Chat {

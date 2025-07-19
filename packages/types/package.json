@@ -1,6 +1,6 @@
 {
   "name": "@muftar/types",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "TypeScript type definitions for Muftar platform",
   "main": "dist/index.js",
   "module": "dist/index.js",

@@ -19,7 +19,7 @@ export interface StatementTxn {
     
     // Core fields
     statement_id: string;
-    statement_block_id?: string | null; // Optional, can be derived from statement
+    statement_block_id: string; // Required field - links transaction to statement block
     user_id: string;
     category: 'load' | 'fuel' | 'reimbursement' | 'deduction' | string; // Allow string for flexibility
     date: string; // ISO date string (YYYY-MM-DD)

@@ -1,47 +1,16 @@
-// Base interface for common statement fields
-export interface BaseStatementItem {
-    id: string;
-    date: number;
-    description: string;
-    amount: number;
-    ytd: number;
-    net_balance: number;
-}
+import { StatementTxn } from './statement_txn.js';
 
-// Specific statement types extending the base
-export interface StatementLoad extends BaseStatementItem {
-    type: 'load';
-    broker: string;
-    load_number: string;
-    gross: number;
-    commission: number;
-}
-
-export interface StatementFuel extends BaseStatementItem {
-    type: 'fuel';
-    station: string;
-    location: string;
-    discount: number;
-    // distance: number;
-    // gallons: number;
-    // price: number;
-    // total: number;
-}
-
-export interface StatementReimbursement extends BaseStatementItem {
-    type: 'reimbursement';
-    category: string;
-}
-
-export interface StatementDeduction extends BaseStatementItem {
-    type: 'deduction';
-    category: string;
-}
-
-// Union type for all statement items with type discrimination
-export type StatementItem = StatementLoad | StatementFuel | StatementReimbursement | StatementDeduction;
-
-// Main statement interface with all original fields
+/**
+ * Statement Interface
+ * 
+ * Represents a financial statement for a user within a statement block.
+ * 
+ * Uses statement_txns table for all transaction data.
+ * The transactions field contains all statement transactions (loads, fuel, reimbursements, deductions).
+ * 
+ * Calculated fields (gross_revenue, expenses, total_deductions, etc.) are computed from statement_txns
+ * and may be stored in the database for performance, but should be recalculated from transactions when needed.
+ */
 export interface Statement {
     id: string;
     created_at: number;
@@ -57,25 +26,28 @@ export interface Statement {
     total_amount?: number;
     payment_method?: string;
     commission_rate?: number;
-    gross_revenue?: number;
-    user_share?: number;
-    expenses?: number;
-    total_reimbursements?: number;
-    user_earnings?: number;
-    subtotal?: number;
-    total_deductions?: number;
-    net_earnings?: number;
-    loads?: StatementLoad[];
-    fuel?: StatementFuel[];
-    reimbursements?: StatementReimbursement[];
-    deductions?: StatementDeduction[];
+    
+    /**
+     * Calculated totals (computed from statement_txns)
+     * These fields are calculated from transactions and may be cached in the database
+     */
+    gross_revenue?: number; // Sum of load transaction gross_amount
+    user_share?: number; // gross_revenue * commission_rate
+    expenses?: number; // Sum of fuel transaction amounts
+    total_reimbursements?: number; // Sum of reimbursement transaction amounts
+    user_earnings?: number; // user_share - expenses + total_reimbursements
+    subtotal?: number; // Same as user_earnings
+    total_deductions?: number; // Sum of deduction transaction amounts
+    net_earnings?: number; // subtotal - total_deductions
+    
     notes?: string;
     metadata?: any;
     statement_block_id?: string;
+    
+    /**
+     * Transactions array
+     * Contains all statement transactions (loads, fuel, reimbursements, deductions)
+     * This is the primary way to access statement data.
+     */
+    transactions?: StatementTxn[];
 }
-
-// Helper type guards for type safety
-export const isStatementLoad = (item: StatementItem): item is StatementLoad => item.type === 'load';
-export const isStatementFuel = (item: StatementItem): item is StatementFuel => item.type === 'fuel';
-export const isStatementReimbursement = (item: StatementItem): item is StatementReimbursement => item.type === 'reimbursement';
-export const isStatementDeduction = (item: StatementItem): item is StatementDeduction => item.type === 'deduction';

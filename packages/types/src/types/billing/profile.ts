@@ -1,9 +1,10 @@
 
 export interface BillingProfile {
     id: string;
+    internal_id: number;
     created_at: number;
     updated_at: number;
-    organization_id: string;
+    organization_id: number;
     type: string;
     plan: string;
     amount: number;

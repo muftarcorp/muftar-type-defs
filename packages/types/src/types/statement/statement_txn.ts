@@ -12,15 +12,16 @@
  */
 export interface StatementTxn {
     id: string;
+    internal_id: number;
     created_at: number;
     updated_at: number;
     status: string; // 'active', 'inactive', 'deleted', etc.
     metadata: Record<string, any>;
     
     // Core fields
-    statement_id: string;
-    statement_block_id: string; // Required field - links transaction to statement block
-    user_id: string;
+    statement_id: number;
+    statement_block_id: number; // Required field - links transaction to statement block
+    user_id: number;
     category: 'load' | 'fuel' | 'reimbursement' | 'deduction' | string; // Allow string for flexibility
     date: string; // ISO date string (YYYY-MM-DD)
     amount: number;
@@ -29,10 +30,10 @@ export interface StatementTxn {
     description: string;
     
     // Category-specific fields (null if not applicable to category)
-    broker_id?: string | null;
-    load_id?: string | null;
+    broker_id?: string | null; // Text field, not a foreign key
+    load_id?: string | null; // Text field, not a foreign key
     gross_amount?: number | null; // For load transactions
-    organization_id?: string | null;
+    organization_id?: number | null;
     commission_rate?: number | null; // For load transactions
     station?: string | null; // For fuel transactions
     location?: string | null; // For fuel transactions

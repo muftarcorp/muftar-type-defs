@@ -1,6 +1,7 @@
 
 export interface Equipment {
     id: string;
+    internal_id: number;
     created_at: number;
     updated_at: number;
     type?: string;

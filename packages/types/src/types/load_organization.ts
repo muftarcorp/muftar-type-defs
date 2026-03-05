@@ -4,13 +4,14 @@ import { Driver } from "./driver";
 
 export interface LoadOrganization {
     id: string;
+    internal_id: number;
     created_at: number;
     updated_at: number;
     status: string | null;
     metadata: any | null;
-    load_id: string | null;
-    organization_id: string | null;
-    driver_id: string | null;
+    load_id: number | null;
+    organization_id: number | null;
+    driver_id: number | null;
     role: string | null;
 }
 

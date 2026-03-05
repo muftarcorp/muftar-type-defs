@@ -1,11 +1,12 @@
 export interface StatementBlock {
     id: string;
+    internal_id: number;
     created_at: number;
     updated_at: number;
     status: string; // "open", "closed", "processing"
     metadata: any;
     block_number: string;
-    organization_id: string;
+    organization_id: number;
     period_start: number;
     period_end: number;
     total_statements: number;

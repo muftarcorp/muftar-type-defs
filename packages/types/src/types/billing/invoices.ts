@@ -1,10 +1,11 @@
 
 export interface BillingInvoice {
     id: string;
+    internal_id: number;
     created_at: number;
     updated_at: number;
     due_at?: number;
-    organization_id: string;
+    organization_id: number;
     subtotal: number;
     credits: number;
     tax: number;

@@ -14,9 +14,10 @@ export enum BillingLineItemStatus {
 
 export interface BillingLineItem {
     id: string;
+    internal_id: number;
     created_at: number;
     updated_at: number;
-    invoice_id: string;
+    invoice_id: number;
     description: string;
     amount: number;
     quantity?: number;

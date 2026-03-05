@@ -2,6 +2,7 @@
 // Types
 export interface Location {
     id: string;
+    internal_id: number;
     created_at: number;
     updated_at: number;
     reference_id: string;

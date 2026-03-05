@@ -13,11 +13,12 @@ import { StatementTxn } from './statement_txn.js';
  */
 export interface Statement {
     id: string;
+    internal_id: number;
     created_at: number;
     updated_at: number;
     statement_number?: string;
-    user_id: string;
-    organization_id: string;
+    user_id: number;
+    organization_id: number;
     role: string;
     pay_period_start_at: number;
     pay_period_end_at?: number;
@@ -42,7 +43,7 @@ export interface Statement {
     
     notes?: string;
     metadata?: any;
-    statement_block_id?: string;
+    statement_block_id?: number;
     
     /**
      * Transactions array

@@ -1,6 +1,7 @@
 
 export interface Media {
     id: string;
+    internal_id: number;
     created_at: number;
     updated_at: number;
     category?: string;
@@ -9,6 +10,6 @@ export interface Media {
     file_uri?: string;
     status?: string;
     metadata?: any;
-    user_id?: string;
+    user_id?: string; // UUID, not bigint
     locked: boolean;
 }

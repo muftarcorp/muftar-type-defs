@@ -9,7 +9,7 @@
   "author": "Muftar Team",
   "repository": {
     "type": "git",
-    "url": "https://github.com/muftarcorp/muftar-type-defs.git"
+    "url": "git+https://github.com/muftarcorp/muftar-type-defs.git"
   },
   "keywords": [
     "typescript",

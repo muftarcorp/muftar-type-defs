@@ -20,5 +20,6 @@ export interface Userdata {
     id_submitted_at?: number;
     credit_wallet_id?: string;
     seen_notifications?: boolean;
+    seen_messages?: boolean;
     auth_id?: string;
   }
